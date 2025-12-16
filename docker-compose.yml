@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    container_name: bank_db
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: senha_bancaria_123
+      POSTGRES_DB: sistema_bancario
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - bank_network
+
+  adminer:
+    image: adminer
+    container_name: bank_adminer
+    restart: always
+    ports:
+      - "8080:8080"
+    networks:
+      - bank_network
+
+networks:
+  bank_network:
+    driver: bridge
+
+volumes:
+  pgdata:
