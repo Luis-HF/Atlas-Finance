@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   db:
-    image: postgres:15
+    image: postgres:15-alpine
     container_name: bank_db
     restart: always
     environment:
@@ -13,6 +13,7 @@ services:
       - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
+      - ./banco-de-dados:/docker-entrypoint-initdb.d
     networks:
       - bank_network
 
