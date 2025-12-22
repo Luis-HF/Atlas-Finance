@@ -1,4 +1,4 @@
-# 🏦 OmniBank
+# 🏦 Atlas Finance
 
 Sistema bancário Fullstack focado em **integridade de dados** e **arquitetura desacoplada**. Desenvolvido para aplicar conceitos de Engenharia de Software e Redes.
 
